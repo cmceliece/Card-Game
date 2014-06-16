@@ -24,5 +24,24 @@
 	d = new Deck();
 	d.init();
 
-	
+		var player1, player2;
+	function War(player1, player2) {
+		player1 = math.floor(math.random() * d.length);
+		d.splice (player1, 1);
+		player2 = math.floor(math.random() * d.length);
+		d.splice (player2, 1)
+		if (player1 === player2) {
+			return console.log ("Its a Tie!");
+		}
+		else if (player1 > player2) {
+			return console.log ("Player 1 Wins!");
+		}
+		else {
+			return console.log ("Player 2 Wins!");
+		}
+	}
+
+
+	//add cards to winning player's array
+	//compare player's arrays.length and declare a winner.
 </script>
