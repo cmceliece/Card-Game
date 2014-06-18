@@ -1,4 +1,5 @@
 Card-Game
 =========
 
-Card Game for Foundations
+WARN Card Game for Foundations Class.
+Please feel free to critique/fork in class.
