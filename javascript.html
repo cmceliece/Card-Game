@@ -1,0 +1,53 @@
+<script>
+	function Deck() {
+		this.cards = [];
+		this.count = function() {
+			return this.cards.length;
+		}
+		this.init = function() {
+			for (s = 1; s <= 4; s ++){
+				for (r = 1; r <= 13; r++){
+					this.cards.push(new Card(r, s));
+				}
+			}
+		}
+	}
+
+	function Card(rank, suit) {
+		this.rank = rank;
+		this.suit = suit;
+		this.show = function() {
+			console.log(this.rank + " of " + this.suit);
+		}
+	}
+
+	d = new Deck();
+	d.init();
+
+	var player1 = Math.floor(Math.random() * d.cards.length);
+			d.cards.splice (player1, 1);
+	var player2 = Math.floor(Math.random() * d.cards.length);
+			d.cards.splice (player2, 1);
+
+	var War = function () {
+		//var player1, player2;
+		//return player1 = Math.floor(Math.random() * d.cards.length);
+		//	this.cards.splice (player1, 1);
+		//return player2 = Math.floor(Math.random() * this.count);
+		//	this.cards.splice (player2, 1);
+		
+		if (player1.rank === player2.rank) {
+			return console.log ("Its a Tie!");
+		}
+		else if (player1.rank > player2.rank) {
+			return console.log ("Player 1 Wins!");
+		}
+		else {
+			return console.log ("Player 2 Wins!");
+		}
+	}
+	War()
+
+	//add cards to winning player's array
+	//compare player's arrays.length and decla
+</script>
