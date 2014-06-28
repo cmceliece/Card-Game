@@ -5,7 +5,7 @@
 			return this.cards.length;
 		}
 		this.init = function() {
-			for (s = 1; s <= 4; s ++){
+			for (s = 1; s <= 4; s++){
 				for (r = 1; r <= 13; r++){
 					this.cards.push(new Card(r, s));
 				}
@@ -24,19 +24,20 @@
 	d = new Deck();
 	d.init();
 	
+	var RandomCard = function (){
+		return d.cards [Math.floor(Math.random() * d.cards.length)];
+	}
 
-	//var player1 = Math.floor(Math.random() * d.cards.length);
-	//		d.cards.splice (player1, 1);
-	//var player2 = Math.floor(Math.random() * d.cards.length);
-	//		d.cards.splice (player2, 1);
 
 	var War = function () {
 		var player1, player2;
-		player1 = Math.floor(Math.random() * d.cards.length);
+		player1 = RandomCard();
 			d.cards.splice (player1, 1);
-		player2 = Math.floor(Math.random() * d.cards.length);
+		player2 = RandomCard();
 			d.cards.splice (player2, 1);
 		
+		console.log ("Player1: " + player1.rank + " and Player2: " + player2.rank)
+
 		if (player1.rank === player2.rank) {
 			return console.log ("Its a Tie!");
 		}
@@ -47,6 +48,7 @@
 			return console.log ("Player 2 Wins!");
 		}
 	}
+
 	War()
 
 	//add cards to winning player's array
